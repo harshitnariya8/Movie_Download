@@ -1,0 +1,197 @@
+{% extends 'bash.html' %}
+{% block content %}
+    {% load static %}
+<div class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h1> movie listing - list</h1>
+				<ul class="breadcumb">
+					<li class="active"><a href="#">Home</a></li>
+					<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="movie-img sticky-sb">
+					<img src="{{ movie_single.Poster.url }}" alt="">
+					<div class="movie-btn">
+						<div class="btn-transform red">
+							<div><a href="https://www.youtube.com/embed/{{ movie_single.Trailer }}" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
+						</div>
+						<div class="btn-transform">
+							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Download</a></div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">{{ movie_single.Movie_Name}}<span>{{ movie_single.Realese_Date.year }}</span></h1>
+					<div class="social-btn">
+						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<div class="hover-bnt">
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<div class="hvr-item">
+								<a href="" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="movie-tabs">
+						<div class="tabs">
+							<ul class="tab-links tabs-mv">
+								<li class="active"><a href="#overview">Overview</a></li>
+								<li><a href="#media"> Photos</a></li>
+								<li><a href="#moviesrelated"> Related Movies</a></li>
+							</ul>
+						    <div class="tab-content">
+                                <div id="media" class="tab">
+						        	<div class="row">
+						        		<div class="rv-hd">
+						            		<div>
+						            			<h3>Photos of</h3>
+					       	 					<h2>{{ movie_single.Movie_Name }}</h2>
+						            		</div>
+						            	</div>
+
+                                        <div class="title-hd-sm">
+												<h4>Sample Photos</h4>
+												<a href="#" class="time">Photos <i class="ion-ios-arrow-right"></i></a>
+											</div>
+
+
+                                        <div class="ads">
+                                            <a class="img-lightbox"  data-fancybox-group="gallery" href="{{ movie_single.Sample1 }}" ><img src="{{ movie_single.Sample1 }}" alt=""></a>
+                                        </div>
+                                        <div class="ads">
+							                    <a class="img-lightbox"  data-fancybox-group="gallery" href="{{ movie_single.Sample2 }}" ><img src="{{ movie_single.Sample2 }}" alt=""></a>
+						                    </div>
+                                        <div class="ads">
+							                    <a class="img-lightbox"  data-fancybox-group="gallery" href="{{ movie_single.Sample3 }}" ><img src="{{ movie_single.Sample3 }}" alt=""></a>
+						                    </div>
+
+						        	</div>
+					       	 	</div>
+						        <div id="overview" class="tab active">
+						            <div class="row">
+						            	<div class="col-md-8 col-sm-12 col-xs-12">
+						            		<p>{{ movie_single.Description}}</p>
+                                            <div class="title-hd-sm">
+												<h4>Downloads</h4>
+												<a href="#" class="time">Photos <i class="ion-ios-arrow-right"></i></a>
+											</div>
+						            		<div class="mvsingle-item" style="display: block;">
+                                            <div><a href="#" class="item item-1 redbtn" > <i class="ion-play"></i> Download 480P</a></div>
+                                            <div  style="margin-top: 80px"><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Download 720P</a></div>
+                                            <div  style="margin-top: 80px"><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Download 1080P</a></div>
+
+
+
+
+
+										</div>
+
+
+						            	</div>
+						            	<div class="col-md-4 col-xs-12 col-sm-12">
+						            		<div class="sb-it">
+						            			<h6>Director: </h6>
+						            			<p><a href="#">{{ movie_single.Director}}</a></p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Writer: </h6>
+						            			<p><a href="#">{{ movie_single.Writer}},</a>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Stars: </h6>
+						            			<p><a href="#">{{ movie_single.Star_Cast}}</a></p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Genres:</h6>
+						            			<p><a href="#">{{ movie_single.genres}} </a></p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Release Date:</h6>
+						            			<p>{{ movie_single.Realese_Date}}</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Run Time:</h6>
+						            			<p>{{ movie_single.Run_time}} min</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>MMPA Rating:</h6>
+						            			<p>PG-13</p>
+						            		</div>
+						            		<div class="sb-it">
+						            			<h6>Plot Keywords:</h6>
+						            			<p class="tags">
+						            				<span class="time"><a href="#">{{ movie_single.Plot_keywords }}</a></span>
+
+						            			</p>
+						            		</div>
+						            		<div class="ads">
+												<img src="{% static 'images/uploads/ads1.png' %}" alt="">
+											</div>
+						            	</div>
+						            </div>
+						        </div>
+
+
+
+					       	 	<div id="moviesrelated" class="tab">
+					       	 		<div class="row">
+					       	 			<h3>Related Movies To</h3>
+					       	 			<h2>{{ movie_single.Movie_Name}}</h2>
+					       	 			<div class="topbar-filter">
+											<p>Found <span>{{ movies_count}}</span> in total</p>
+
+										</div>
+                                        {% for rm in related_movie %}
+										<div class="movie-item-style-2">
+
+											<img src="{{ rm.Poster}}" alt="">
+											<div class="mv-item-infor">
+												<h6><a href="{% url 'movie_details' rm.id %}">{{ rm.Movie_Name }} <span>{{ rm.Realese_Date.year }}</span></a></h6>
+												<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
+												<p class="describe"> {{ rm.Description}}</p>
+												<p class="run-time"> Run Time: {{ rm.Run_time }} min         <span>MMPA: PG-13 </span>        <span>Release: 1 May 2015</span></p>
+												<p>Director: <a href="#">{{ rm.Director}}</a></p>
+												<p>Stars: <a href="#">{{ rm.Star_Cast}}</a></p>
+											</div>
+										</div>
+										{% endfor %}
+										<div class="topbar-filter">
+											<label>Movies per page:</label>
+											<select>
+												<option value="range">5 Movies</option>
+												<option value="saab">10 Movies</option>
+											</select>
+											<div class="pagination2">
+												<span>Page 1 of 2:</span>
+												<a class="active" href="#">1</a>
+												<a href="#">2</a>
+												<a href="#"><i class="ion-arrow-right-b"></i></a>
+											</div>
+										</div>
+					       	 		</div>
+					       	 	</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
