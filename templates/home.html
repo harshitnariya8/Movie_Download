@@ -2,202 +2,281 @@
 
 {% block content %}
     {% load static %}
-<div class="slider sliderv2">
-	<div class="container">
-		<div class="row">
-	    	<div class="slider-single-item">
-                {% for fm in featured_movies %}
-	    		<div class="movie-item">
-	    			<div class="row">
-
-	    				<div class="col-md-8 col-sm-12 col-xs-12">
-	    					<div class="title-in">
-			    				<div class="cate">
-			    					<span class="blue"><a href="#">Sci-fi</a></span>
-			    					<span class="yell"><a href="#">Action</a></span>
-			    					<span class="orange"><a href="#">advanture</a></span>
-			    				</div>
-			    				<h1><a href="#">{{ fm.Movie_Name}}<br><span>{{ fm.Realese_Date.year }}</span></a></h1>
-								<div class="social-btn">
-									<a href="https://www.youtube.com/embed/{{fm.Trailer}}" class="parent-btn"><i class="ion-play"></i> Watch Trailer</a>
-									<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
-									<div class="hover-bnt">
-										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
-										<div class="hvr-item">
-											<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
-											<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
-											<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
-											<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+    <div id="LayoutWrapper" style="background: #06121e" class="css-1k0796j-LayoutWrapper e2ppagj0">
+	<main id="skip-link_main-content" class="css-btbohs-MainLayout e2ppagj1">
+		<div data-qa="BoxOfficeContainer" class="css-7aoyh2-DivWrap en6l7rz0">
+			<div data-qa="MovieCarousels" class="css-7aoyh2-DivWrap e1i1bwai0">
+				<h1 class="sr-text css-9rfu6l-H1Title e1i1bwai1">Movies</h1>
+				<div class="css-4e9a6g-DivListsWrapper e1i1bwai2">
+					<div class="css-s9kdrs-DivListWrap e1i1bwai3">
+						<div class="css-1uwdckd-DivListTitle e1i1bwai4">
+							<div><a aria-label="Opening This Week" id="skip-link_opening-this-week"
+									href="opening-this-week.html">
+									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="color: white; font-size: large">Opening This Week</h2>
+								</a></div><a href="#skip-link_top-box-office" class="skip-link">Skip to
+								movies Top Box Office</a>
+						</div>
+						<div data-qa="Carousel">
+							<section data-qa="Carousel__mobile"
+								class="css-1vpodai-SectionMobileCarousel efuon190">
+								<ul class="css-t9dul2-UlMobileCarousel efuon191">
+                                    {% for movie in movies %}
+									<li>
+										<div>
+											<div data-qa="movie"
+												class="css-1n1x7x4-DivCarouselMovie e1rfit662">
+                                                <a class="focus-item__movie-tile" style="display:block"
+													href="{% url 'movie_details' movie.id %}">
+													<div class="css-5k5ufu-DivPoster e2b5svk0">
+														<div class="css-xuc6y2-DivPosterWrapper e12zdxf40">
+															<div
+																class="css-156hs8y-DivPosterContainer e12zdxf41">
+																<div style="height:0px" class="css-q4ka59-DivPoster e12zdxf42">
+                                                                     <img data-qa="LazyImage" src="{{ movie.Poster.url}}" alt="Jockey" class="css-1kf5xd2-ImgLazyImage e1imdblg0">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="css-175zsx4-DivDetails e2b5svk1" style="margin-top: -19px">
+														<div class="css-1h4g5hp-DivScores e2b5svk2">
+															<span><span class="sr-text">,
+																	<!-- -->86% Fresh Tomatometer Score
+																</span><svg
+																	class="inlineIcon css-6r3srx-icon"
+																	aria-hidden="true" focusable="false">
+																	<use xlink:href="#Tomato-Fresh"></use>
+																</svg><span data-qa="fresh-score"
+																	aria-hidden="true" focusable="false"
+																	class="css-11czaeu-SpanPercent efkubup0">{{ movie.Rating }}
+																	<!-- -->
+																</span></span></div>
+														<div class="h5 css-5a77sp-DivTitle e2b5svk4"
+															data-qa="title">
+															<div style="margin-left: 5px" class="row">
+                                                                <span class="sr-text">{{ movie.Movie_Name }}</span>
+																<div class="LinesEllipsis  "
+																	data-qa="summary-short"
+																	aria-hidden="true" style="color: white; font-weight: bold; font-size: 15px">{{ movie.Movie_Name }}<wbr></wbr>
+																</div>
+                                                                <h2 style="color: white; font-size: 12px; opacity: unset">{{ movie.Rating }}<i class="ion-android-star" style="color: yellow"></i></h2>
+															</div>
+														</div>
+													</div>
+												</a></div>
 										</div>
-									</div>
-								</div>
-			    				<div class="mv-details">
-			    					<p><i class="ion-android-star"></i><span>{{ fm.Rating }}</span> /10</p>
-			    					<ul class="mv-infor">
-			    						<li>  Run Time: {{ fm.Run_time}}min </li>
-			    						<li>  Rated: PG-13  </li>
-			    						<li>  Release: {{ fm.Realese_Date}}</li>
-			    					</ul>
-			    				</div>
+									</li>
+                                    {% endfor %}
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="css-s9kdrs-DivListWrap e1i1bwai3">
+						<div class="css-1uwdckd-DivListTitle e1i1bwai4">
+							<div><a aria-label="Top Box Office" id="skip-link_top-box-office"
+									href="top-box-office.html">
+									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="color: white; font-size: 20px">Top Box Office</h2>
+								</a></div><a href="#skip-link_coming-soon" class="skip-link">Skip to movies
+								Coming Soon</a>
+							<div class="css-9mc2v6-DivMore e1i1bwai7"><a data-qa="see-all"
+									aria-label="See all movies Top Box Office" href="{% url 'movielist' %}"
+									class="css-11n058f-ASeeAll e1i1bwai8">See all</a></div>
+						</div>
+						<div data-qa="Carousel">
+							<section data-qa="Carousel__mobile"
+								class="css-1vpodai-SectionMobileCarousel efuon190">
+								<ul class="css-t9dul2-UlMobileCarousel efuon191">
+                                    {% for tr in top_rated %}
+									<li>
+										<div>
+											<div data-qa="movie"
+												class="css-1n1x7x4-DivCarouselMovie e1rfit662"><a
+													class="focus-item__movie-tile" style="display:block"
+													href="{% url 'movie_details' tr.id %}">
+													<div class="css-5k5ufu-DivPoster e2b5svk0">
+														<div class="css-xuc6y2-DivPosterWrapper e12zdxf40">
+															<div
+																class="css-156hs8y-DivPosterContainer e12zdxf41">
+																<div style="height:0px"
+																	class="css-q4ka59-DivPoster e12zdxf42">
+                                                                    <img data-qa="LazyImage" src="{{ tr.Poster.url}}" alt="Jockey" class="css-1kf5xd2-ImgLazyImage e1imdblg0">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="css-175zsx4-DivDetails e2b5svk1" style="margin-top: -19px">
+														<div class="css-1h4g5hp-DivScores e2b5svk2">
+															<span><span class="sr-text">,
+																	<!-- -->94% Certified Fresh Tomatometer
+																	Score
+																</span><svg
+																	class="inlineIcon css-6r3srx-icon"
+																	aria-hidden="true" focusable="false">
+																	<use
+																		xlink:href="#Tomato-Certified-Fresh">
+																	</use>
+																</svg><span data-qa="certified_fresh-score"
+																	aria-hidden="true" focusable="false"
+																	class="css-11czaeu-SpanPercent efkubup0">94
+																	<!-- -->%
+																</span></span><span><span class="sr-text">,
+																	<!-- -->98% Audience Score
+																</span><svg
+																	class="inlineIcon css-6r3srx-icon"
+																	aria-hidden="true" focusable="false">
+																	<use xlink:href="#Popcorn-Upright">
+																	</use>
+																</svg><span data-qa="upright-score"
+																	aria-hidden="true" focusable="false"
+																	class="css-11czaeu-SpanPercent efkubup0">98
+																	<!-- -->%
+																</span></span></div>
+														<div class="h5 css-5a77sp-DivTitle e2b5svk4"
+															data-qa="title">
+															<div class="row" style="margin-left: 5px">
+                                                                <span class="sr-text" style="color:white; font-size: 15px; font-weight: bold">{{ tr.Movie_Name}}</span>
+																<div class="LinesEllipsis  "
+																	data-qa="summary-short"
+																	aria-hidden="true" style="color:white; font-size: 15px; font-weight: bold">{{ tr.Movie_Name}}<wbr></wbr>
+                                                                </div>
+                                                                <h2 style="color: white; font-size: 12px; opacity: unset">{{ tr.Rating }}<i class="ion-android-star" style="color: yellow"></i></h2>
+															</div>
 
-									<div><a href="{% url 'movie_details' fm.id %}" class="item item-1 redbtn">Watch</a></div>
+														</div>
+													</div>
+												</a></div>
+										</div>
+									</li>
+                                    {% endfor %}
 
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="css-s9kdrs-DivListWrap e1i1bwai3">
+						<div class="css-1uwdckd-DivListTitle e1i1bwai4">
+							<div><a aria-label="Coming Soon" id="skip-link_coming-soon"
+									href="coming-soon.html">
+									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="font-size: 20px; color: white">Coming Soon</h2>
+								</a></div><a href="#skip-link_first-footer-link" class="skip-link">Skip to
+								footer links</a>
+							<div class="css-9mc2v6-DivMore e1i1bwai7"><a data-qa="see-all"
+									aria-label="See all movies Coming Soon" href="{% url 'movielist' %}"
+									class="css-11n058f-ASeeAll e1i1bwai8">See all</a></div>
+						</div>
+						<div data-qa="Carousel">
+							<section data-qa="Carousel__mobile"
+								class="css-1vpodai-SectionMobileCarousel efuon190">
+								<ul class="css-t9dul2-UlMobileCarousel efuon191">
+                                    {% for csm in Coming_Soon_Movies %}
+									<li>
+										<div>
+											<div data-qa="movie"
+												class="css-1n1x7x4-DivCarouselMovie e1rfit662"><a
+													class="focus-item__movie-tile" style="display:block"
+													href="{% url 'movie_details' csm.id %}">
+													<div class="css-5k5ufu-DivPoster e2b5svk0">
+														<div class="css-xuc6y2-DivPosterWrapper e12zdxf40">
+															<div
+																class="css-156hs8y-DivPosterContainer e12zdxf41">
+																<div style="height:0px"
+																	class="css-q4ka59-DivPoster e12zdxf42">
+                                                                    <img data-qa="LazyImage" src="{{ csm.Poster.url}}" alt="Jockey" class="css-1kf5xd2-ImgLazyImage e1imdblg0">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="css-175zsx4-DivDetails e2b5svk1" style="margin-top: -5px">
+														<div class="h5 css-5a77sp-DivTitle e2b5svk4"
+															data-qa="title">
 
-			    			</div>
-	    				</div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-		    				<div class="mv-img-2">
-			    				<a href="#"><img src="{{ fm.Poster.url}}" alt=""></a>
-			    			</div>
-		    			</div>
+															<div class="row" style="margin-left: 5px">
+                                                                <span class="sr-text">{{ csm.Movie_Name}}</span>
+																<div class="LinesEllipsis  "
+																	data-qa="summary-short"
+																	aria-hidden="true" style="font-size: 15px; color: white; font-weight: bold">
+                                                                    {{ csm.Movie_Name }}<wbr></wbr>
+																</div>
+                                                                <h2 style="color: white; font-size: 12px; opacity: unset">{{ csm.Rating }}<i class="ion-android-star" style="color: yellow"></i></h2>
+															</div>
+														</div>
 
-	    			</div>
-	    		</div>
-                {% endfor %}
-
-	    	</div>
-	    </div>
-	</div>
-</div>
-<div class="movie-items  full-width">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="title-hd">
-				<h2>Trending</h2>
-				<a href="{% url 'movielist' %}" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
-			</div>
-			<div class="tabs">
-			    <div class="tab-content">
-			        <div id="tab1-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-                                {% for movie in movies %}
-			            		<div class="slide-it slideit">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="{{ movie.Poster.url }}" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="{% url 'movie_details' movie.id %}">Watch </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">{{ movie.Movie_Name }}</a></h6>
-				            				<p><i class="ion-android-star"></i><span>{{ movie.Rating }}</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-                                {% endfor %}
-
-			            	</div>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-			<div class="title-hd">
-				<h2>Top Rated</h2>
-				<a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
-			</div>
-			<div class="tabs">
-			    <div class="tab-content">
-			        <div id="tab21-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-                                {% for tr in top_rated %}
-
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="{{ tr.Poster.url}}" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="{% url 'movie_details' tr.id %}"> Watch <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">{{ tr.Movie_Name }}</a></h6>
-				            				<p><i class="ion-android-star"></i><span>{{ tr.Rating }}</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-								{% endfor %}
-			            	</div>
-			            </div>
-			        </div>
-
-			    </div>
-			</div>
-            <div class="title-hd">
-				<h2>Coming Soon</h2>
-				<a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
-			</div>
-            <div class="tabs">
-			    <div class="tab-content">
-			        <div id="tab1-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-                                {% for csm in Coming_Soon_Movies %}
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="{{ csm.Poster.url }}" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="{% url 'movie_details' csm.id %}">Watch </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">{{ csm.Movie_Name }}</a></h6>
-				            				<p><i class="ion-android-star"></i><span>{{ csm.Rating }}</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-                                {% endfor %}
-
-			            	</div>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-            <div class="title-hd">
-				<h2>Bollywood</h2>
-				<a href="{% url 'movielist' %}" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
-			</div>
-            <div class="tabs">
-			    <div class="tab-content">
-			        <div id="tab21-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-                                {% for bm in Bollywood_movies %}
-
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="{{ bm.Poster.url}}" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="{% url 'movie_details' bm.id %}"> Watch <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">{{ bm.Movie_Name }}</a></h6>
-				            				<p><i class="ion-android-star"></i><span>{{ bm.Rating }}</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-								{% endfor %}
-			            	</div>
-			            </div>
-			        </div>
-
-			    </div>
-			</div>
-			<div class="row">
+													</div>
+												</a></div>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							</section>
+						</div>
+					</div>
+                    <div class="css-s9kdrs-DivListWrap e1i1bwai3">
+						<div class="css-1uwdckd-DivListTitle e1i1bwai4">
+							<div><a aria-label="Coming Soon" id="skip-link_coming-soon"
+									href="coming-soon.html">
+									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="font-size: 20px; color: white">Bollywood</h2>
+								</a></div><a href="#skip-link_first-footer-link" class="skip-link">Skip to
+								footer links</a>
+							<div class="css-9mc2v6-DivMore e1i1bwai7"><a data-qa="see-all"
+									aria-label="See all movies Coming Soon" href="{% url 'movielist' %}"
+									class="css-11n058f-ASeeAll e1i1bwai8">See all</a></div>
+						</div>
+						<div data-qa="Carousel">
+							<section data-qa="Carousel__mobile"
+								class="css-1vpodai-SectionMobileCarousel efuon190">
+								<ul class="css-t9dul2-UlMobileCarousel efuon191">
+                                    {% for bm in Bollywood_movies %}
+									<li>
+										<div>
+											<div data-qa="movie"
+												class="css-1n1x7x4-DivCarouselMovie e1rfit662"><a
+													class="focus-item__movie-tile" style="display:block"
+													href="{% url 'movie_details' bm.id %}">
+													<div class="css-5k5ufu-DivPoster e2b5svk0">
+														<div class="css-xuc6y2-DivPosterWrapper e12zdxf40">
+															<div
+																class="css-156hs8y-DivPosterContainer e12zdxf41">
+																<div style="height:0px"
+																	class="css-q4ka59-DivPoster e12zdxf42">
+                                                                    <img data-qa="LazyImage" src="{{ bm.Poster.url}}" alt="Jockey" class="css-1kf5xd2-ImgLazyImage e1imdblg0">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="css-175zsx4-DivDetails e2b5svk1" style="margin-top: -5px">
+														<div class="h5 css-5a77sp-DivTitle e2b5svk4"
+															data-qa="title">
+															<div class="row" style="margin-left: 5px">
+                                                                <span class="sr-text">{{ bm.Movie_Name}}</span>
+																<div class="LinesEllipsis  "
+																	data-qa="summary-short"
+																	aria-hidden="true" style="font-size: 15px; color: white; font-weight: bold">
+                                                                    {{ bm.Movie_Name }}<wbr></wbr>
+																</div>
+                                                                <h2 style="color: white; font-size: 12px; opacity: unset">{{ bm.Rating }}<i class="ion-android-star" style="color: yellow"></i></h2>
+															</div>
+														</div>
+													</div>
+												</a></div>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							</section>
+						</div>
+					</div>
+                    <div class="row">
 				<div class="ads adsv2">
 					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
 				</div>
 				<div class="ads adsv2">
 					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
+				</div>
+			</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
+
 </div>
 
 <div class="trailers full-width">
@@ -209,14 +288,14 @@
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
-                        {% for movie in movies %}
+                        {% for movie in featured_movies %}
 					   <div>
                             <iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/{{ movie.Trailer }}"></iframe>
 					    </div>
 					    {% endfor %}
 					</div>
 					<div class="slider-nav-2 thumb-ft">
-                        {% for movie in movies %}
+                        {% for movie in featured_movies %}
 						<div class="item">
 							<div class="trailer-img">
 								<img src="{{movie.Poster.url}}"  alt="moviebeast" width="4096" height="2737">

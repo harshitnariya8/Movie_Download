@@ -1,0 +1,96 @@
+{% extends 'bash.html' %}
+{% block content %}
+
+{% load static %}
+
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1> Trending</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-sm-12 col-xs-12">
+				<div class="topbar-filter">
+					<p>Found <span>{{ movies_count}} movies</span> in total</p>
+
+				</div>
+                <div id="LayoutWrapper" class="css-1k0796j-LayoutWrapper e2ppagj0" style="padding:0px">
+                    <main id="skip-link_main-content" class="css-btbohs-MainLayout e2ppagj1" style="padding-top: 0px">
+
+                        <ul class="css-viy3nl-UlMovieList-movieList e1rfit660" aria-live="polite">
+                            {% for movie in movies %}
+                            <li order="1" class="css-1wpxpba-LiMovie-liPadding e1rfit661">
+                                <a class="focus-item__movie-tile"
+                                    style="display:block" href="{% url 'movie_details' movie.id %}">
+                                    <div class="css-5k5ufu-DivPoster e2b5svk0">
+                                        <div class="css-xuc6y2-DivPosterWrapper e12zdxf40">
+                                            <div class="css-156hs8y-DivPosterContainer e12zdxf41">
+                                                <div style="height:0px" class="css-q4ka59-DivPoster e12zdxf42">
+                                                     <img data-qa="LazyImage" src="{{ movie.Poster.url}}" alt="Jockey" class="css-1kf5xd2-ImgLazyImage e1imdblg0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="css-175zsx4-DivDetails e2b5svk1" style="margin-top: -20px">
+                                        <div class="css-1h4g5hp-DivScores e2b5svk2"><span><span class="sr-text">,
+                                                    <!-- -->57% Rotten Tomatometer Score
+                                                </span><svg class="inlineIcon css-6r3srx-icon" aria-hidden="true"
+                                                    focusable="false">
+                                                    <use xlink:href="#Tomato-Rotten"></use>
+                                                </svg><span data-qa="rotten-score" aria-hidden="true" focusable="false"
+                                                    class="css-11czaeu-SpanPercent efkubup0">57
+                                                    <!-- -->%
+                                                </span></span><span><span class="sr-text">,
+                                                    <!-- -->94% Audience Score
+                                                </span><svg class="inlineIcon css-6r3srx-icon" aria-hidden="true"
+                                                    focusable="false">
+                                                    <use xlink:href="#Popcorn-Upright"></use>
+                                                </svg><span data-qa="upright-score" aria-hidden="true" focusable="false"
+                                                    class="css-11czaeu-SpanPercent efkubup0">94
+                                                    <!-- -->%
+                                                </span></span></div>
+                                        <div class="h5 css-5a77sp-DivTitle e2b5svk4" data-qa="title">
+                                            <div class="row" style="margin-left: 5px;">
+                                                 <span class="sr-text">{{ movie.Movie_Name}}</span>
+                                                <div class="LinesEllipsis  " data-qa="summary-short" aria-hidden="true" style="color: white; font-size: 15px; font-weight: bold">
+                                                    {{ movie.Movie_Name}}<wbr></wbr></div>
+                                                <h2 style="color: white; font-size: 12px; opacity: unset">{{ movie.Rating }}<i class="ion-android-star" style="color: yellow"></i></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a></li>
+                            {% endfor %}
+                        </ul>
+
+                    </main>
+                </div>
+
+
+				<div class="topbar-filter">
+
+					<div class="pagination2">
+						<span>Page 1 of 2:</span>
+						<a class="active" href="#">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">...</a>
+						<a href="#">78</a>
+						<a href="#">79</a>
+						<a href="#"><i class="ion-arrow-right-b"></i></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

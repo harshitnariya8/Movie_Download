@@ -27,19 +27,20 @@
 							</a>
 
 						</li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1">
-							Trending
-							</a>
-						</li>
-
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1">
+                        <li class="dropdown first">
+							<a class="btn btn-default dropdown-toggle lv1" href="{% url 'newmovie' %}">
 							New
 							</a>
 						</li>
+						<li class="dropdown first">
+							<a href="{% url 'movielist' %}" class="btn btn-default dropdown-toggle lv1">
+							Top Rated
+							</a>
+						</li>
+
+
                         <li class="dropdown first">
-							<a class="btn btn-default lv1">
+							<a class="btn btn-default lv1" href="{% url 'upcoming' %}">
 							Upcoming Movies
 							</a>
 						</li>
@@ -49,7 +50,7 @@
 							</a>
 						</li>
                         <li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1">
+							<a class="btn btn-default dropdown-toggle lv1" href="{% url 'Bollywood' %}">
 							Bollywood
 							</a>
 						</li>
