@@ -2,6 +2,7 @@ import datetime
 
 from .models import NewMovie
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -34,11 +35,26 @@ def movie_details(request, id):
     for m in mov:
         related_movie = NewMovie.objects.filter(genres__icontains=m)
 
+    # paginator movie call
+    paginator = Paginator(related_movie, 18)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
+
+    movie_num = int((paginator.count / 18) + 1)
+
+    list = []
+    for i in range(1, movie_num + 1):
+        list.append(i)
+        i += 1
+
     movies_count = related_movie.count()
+
     data = {
         'movies': movies,
         'movie_single': movie_single,
         'related_movie': related_movie,
+        'movie_num': list,
+        'page_obj': page_obj,
         'movies_count': movies_count,
 
     }
@@ -47,8 +63,20 @@ def movie_details(request, id):
 
 def movielist(request):
     movies = NewMovie.objects.order_by('-Rating')
+    # paginator movie call
+    paginator = Paginator(movies, 6)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
+
+    # paggination count
     movies_count = movies.count()
+    movie_num = int((paginator.count / 6) + 1)
     movie_search = NewMovie.objects.values_list('Movie_Name', flat=True).distinct()
+
+    list = []
+    for i in range(1, movie_num + 1):
+        list.append(i)
+        i += 1
 
     if 'Movie_Name' in request.GET:
         Movie_Name = request.GET['Movie_Name']
@@ -59,6 +87,10 @@ def movielist(request):
         'movies': movies,
         'movies_count': movies_count,
         'movie_search': movie_search,
+        'movie_num': list,
+        'page_obj': page_obj,
+        'paginator': paginator,
+
     }
     return render(request, 'nav_movie_files/movielist.html', data)
 

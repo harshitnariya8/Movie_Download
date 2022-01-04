@@ -469,7 +469,7 @@
     width: 75%;
   }
   .col-md-8 {
-    width: 100%;
+    width: 66.6666667%;
   }
   .col-md-7 {
     width: 58.33333333%;
@@ -4600,9 +4600,6 @@ ul {
 .topbar-filter .active,
 .topbar-filter i:hover {
   color: #dcf836;
-}
-.topbar-filter .pagination2 {
-  padding-left: 100px;
 }
 @media (max-width: 767px) {
   .topbar-filter .pagination2 {
