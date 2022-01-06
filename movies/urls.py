@@ -8,4 +8,6 @@ urlpatterns = [
     path('newmovie/',views.newmovie,name='newmovie'),
     path('upcoming/',views.upcoming,name='upcoming'),
     path('Bollywood/',views.Bollywood,name='Bollywood'),
+    path('Hollywood/',views.Hollywood,name='Hollywood'),
+    path('Search/',views.Search,name='Search'),
 ]

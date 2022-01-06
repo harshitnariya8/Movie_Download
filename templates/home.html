@@ -85,7 +85,9 @@
 							<section data-qa="Carousel__mobile"
 								class="css-1vpodai-SectionMobileCarousel efuon190">
 								<ul class="css-t9dul2-UlMobileCarousel efuon191">
-                                    {% for tr in top_rated %}
+
+                                    {% for tr in home_toprated %}
+
 									<li>
 										<div>
 											<div data-qa="movie"
@@ -147,7 +149,6 @@
 										</div>
 									</li>
                                     {% endfor %}
-
 								</ul>
 							</section>
 						</div>
@@ -160,7 +161,7 @@
 								</a></div><a href="#skip-link_first-footer-link" class="skip-link">Skip to
 								footer links</a>
 							<div class="css-9mc2v6-DivMore e1i1bwai7"><a data-qa="see-all"
-									aria-label="See all movies Coming Soon" href="{% url 'movielist' %}"
+									aria-label="See all movies Coming Soon" href="{% url 'upcoming' %}"
 									class="css-11n058f-ASeeAll e1i1bwai8">See all</a></div>
 						</div>
 						<div data-qa="Carousel">
@@ -217,14 +218,14 @@
 								</a></div><a href="#skip-link_first-footer-link" class="skip-link">Skip to
 								footer links</a>
 							<div class="css-9mc2v6-DivMore e1i1bwai7"><a data-qa="see-all"
-									aria-label="See all movies Coming Soon" href="{% url 'movielist' %}"
+									aria-label="See all movies Coming Soon" href="{% url 'Bollywood' %}"
 									class="css-11n058f-ASeeAll e1i1bwai8">See all</a></div>
 						</div>
 						<div data-qa="Carousel">
 							<section data-qa="Carousel__mobile"
 								class="css-1vpodai-SectionMobileCarousel efuon190">
 								<ul class="css-t9dul2-UlMobileCarousel efuon191">
-                                    {% for bm in Bollywood_movies %}
+                                    {% for bm in home_Bollywood %}
 									<li>
 										<div>
 											<div data-qa="movie"
@@ -284,7 +285,7 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>in theater</h2>
-					<a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
+
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
@@ -332,7 +333,7 @@
 				</div>
 				<div class="title-hd">
 					<h2>Latest news</h2>
-					<a href="bloggrid.html" class="viewall">see all news <i class="ion-ios-arrow-right"></i></a>
+
 				</div>
 				<div class="latestnewv2">
 					<div class="blog-item-style-2">

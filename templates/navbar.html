@@ -55,7 +55,7 @@
 							</a>
 						</li>
                         <li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1">
+							<a class="btn btn-default dropdown-toggle lv1" href="{% url 'Hollywood' %}">
 							Hollywood
 							</a>
 						</li>
@@ -65,13 +65,10 @@
 	    </nav>
 
 	    <!-- top search form -->
-        <form name="Movie_Name" method="get" action="{% url 'movielist'  %}">
+        <form name="Movie_Name" method="get" action="{% url 'Search'  %}">
             <div class="top-search">
 
-                    <select >
-                        <option value="united">TV show</option>
-                        <option value="saab">Others</option>
-                    </select>
+
                     <input type="search" name="Movie_Name" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
 
             </div>
