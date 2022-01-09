@@ -74,34 +74,15 @@ def movie_details(request, id):
 
 def Search(request):
     movies = NewMovie.objects.order_by('-Rating')
-
     if 'Movie_Name' in request.GET:
         Movie_Name = request.GET['Movie_Name']
         if Movie_Name:
             movies = movies.filter(Movie_Name__icontains=Movie_Name)
-
-    movies_count = movies.count()
-    # paginator movie call
-    paginator = Paginator(movies, 12)
-    page = request.GET.get('page')
-    page_obj = paginator.get_page(page)
-
-    # paggination count
-    movie_num = int((paginator.count / 12) + 1)
-    movie_search = NewMovie.objects.values_list('Movie_Name', flat=True).distinct()
-
-    list = []
-    for i in range(1, movie_num + 1):
-        list.append(i)
-        i += 1
+            m = Movie_Name
 
     data = {
         'movies': movies,
-        'movie_search': movie_search,
-        'movie_num': list,
-        'movies_count': movies_count,
-        'page_obj': page_obj,
-        'paginator': paginator,
+        'm': m,
 
     }
     return render(request, 'movies/search.html', data)
