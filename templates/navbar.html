@@ -61,7 +61,8 @@
 	    </nav>
 
 	    <!-- top search form -->
-        <form name="Movie_Name" method="get" action="{% url 'Search'  %}">
+        <form name="Movie_Name" method="post" action="{% url 'Search'  %}">
+            {% csrf_token %}
             <div class="top-search">
 
 
