@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'moviereview.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MovieBeast',
-        'USER': 'postgres',
-        'PASSWORD': 'hnariya7422',
+        'NAME': 'd3gvpvqcnnosqt',
+        'USER': 'ckkxrmqelhwxdi',
+        'PASSWORD': '3e1110c07211e6cc9c6f1fd50c3038b6fe7a078ed6728dc50188de421ee2c196',
         'HOST': 'localhost',
         'PORT': '5432',
     }
