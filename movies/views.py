@@ -15,7 +15,7 @@ def home(request):
     home_Bollywood = Bollywood_movies.all()[:10]
     Coming_Soon_Movies = NewMovie.objects.filter(Coming_Soon=True).order_by('-Created_date').reverse()
     Movie_search = NewMovie.objects.filter(Movie_Name__contains='Movie_Name')
-    if 'Movie_Name' is request.GET:
+    if request.GET['Movie_Name']:
         Movie_Name = request.GET['Movie_Name']
         if Movie_Name:
             movies = movies.filter(Movie_Name__contains=Movie_Name)
