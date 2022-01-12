@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-58w2)@y4x1f^=$i-3-!^eyyq#$gf@=qu0#tr31xm#+j)-51_&8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','filmybazaar.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','filmybazar.herokuapp.com']
 
 
 # Application definition
