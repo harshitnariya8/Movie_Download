@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-58w2)@y4x1f^=$i-3-!^eyyq#$gf@=qu0#tr31xm#+j)-51_&8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','filmybazaaar.herokuapp.com']
 
@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'moviereview.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'da313s46rlcr7t',
-        'USER': 'znnlhqmslwvwuy',
-        'PASSWORD': '95bb78084f1c04e4c35fe5afb50358e35cecd5511f309a276c8d2f038bb54760',
-        'HOST': 'ec2-18-234-17-166.compute-1.amazonaws.com',
+        'NAME': 'MovieBeast',
+        'USER': 'postgres',
+        'PASSWORD': 'hnariya7422',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
