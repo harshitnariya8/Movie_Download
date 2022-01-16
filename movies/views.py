@@ -185,7 +185,7 @@ def Bollywood(request):
         'movie_num': list,
         'page_obj': page_obj,
     }
-    return render(request, 'nav_movie_files/Bollywood.html', data)
+    return render(request, 'nav_movie_files/bollywood.html', data)
 
 def Hollywood(request):
     movies = NewMovie.objects.filter(Plot_keywords__icontains='Hollywood').order_by('-Realese_Date')
