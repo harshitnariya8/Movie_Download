@@ -11,7 +11,7 @@
 					<div class="css-s9kdrs-DivListWrap e1i1bwai3">
 						<div class="css-1uwdckd-DivListTitle e1i1bwai4">
 							<div><a aria-label="Opening This Week" id="skip-link_opening-this-week">
-									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="color: white; font-size: x-large">Opening This Week</h2>
+									<h2 class="h2 css-1r6jr6e-H2ListTitle e1i1bwai5" style="color: white; font-size: x-large">Trending</h2>
 								</a></div><a href="#skip-link_top-box-office" class="skip-link">Skip to
 								movies Top Box Office</a>
 						</div>
@@ -19,7 +19,7 @@
 							<section data-qa="Carousel__mobile"
 								class="css-1vpodai-SectionMobileCarousel efuon190">
 								<ul class="css-t9dul2-UlMobileCarousel efuon191">
-                                    {% for movie in movies %}
+                                    {% for movie in featured_movies %}
 									<li>
 										<div>
 											<div data-qa="movie"
@@ -84,7 +84,7 @@
 								class="css-1vpodai-SectionMobileCarousel efuon190">
 								<ul class="css-t9dul2-UlMobileCarousel efuon191">
 
-                                    {% for tr in home_toprated %}
+                                    {% for tr in top_rated %}
 
 									<li>
 										<div>
@@ -221,7 +221,7 @@
 							<section data-qa="Carousel__mobile"
 								class="css-1vpodai-SectionMobileCarousel efuon190">
 								<ul class="css-t9dul2-UlMobileCarousel efuon191">
-                                    {% for bm in home_Bollywood %}
+                                    {% for bm in Bollywood_movies %}
 									<li>
 										<div>
 											<div data-qa="movie"
@@ -262,12 +262,7 @@
 						</div>
 					</div>
                     <div class="row">
-				<div class="ads adsv2">
-					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
-				</div>
-				<div class="ads adsv2">
-					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
-				</div>
+
 			</div>
 				</div>
 			</div>
@@ -320,76 +315,5 @@
 		</div>
 
 </div>
-<!-- latest new v2 section-->
-<div class="latestnew full-width">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="ads adsv2">
-					<img src="{% static 'images/uploads/ads2.png' %}" alt="">
-				</div>
-				<div class="title-hd">
-					<h2>Latest news</h2>
 
-				</div>
-				<div class="latestnewv2">
-					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv21.jpg' %}" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Looks like Kong: Skull Island started a tradition with its casting of Straight ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv22.jpg' %}" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Aside from the her digital incarnation, the most recognisable image of Tomb ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv23.jpg' %}" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>He might be a primary protector of New York City, but at heart, Peter Parker is ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="{% static 'images/uploads/blogv24.jpg' %}" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>A little over a year ago, we learned that Joseph Gordon-Levitt and Channing ...</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="sidebar">
-					<div class="sb-facebook sb-it">
-						<h4 class="sb-title">Find us on Facebook</h4>
-
-					</div>
-					<div class="ads">
-							<img src="{% static 'images/uploads/ads1.png' %}" alt="" width="428" height="306">
-						</div>
-					<div class="sb-twitter sb-it">
-						<h4 class="sb-title">Tweet to us</h4>
-						<div class="slick-tw">
-							<div class="tweet item" id=""><!-- Put your twiter id here -->
-							</div>
-							<div class="tweet item" id=""><!-- Put your 2nd twiter account id here -->
-							</div>
-						</div>
-						<div class="ads">
-							<img src="{% static 'images/uploads/ads1.png' %}" alt="" width="428" height="306">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-</div>
 {% endblock %}
