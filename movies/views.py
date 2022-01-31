@@ -1,10 +1,9 @@
 import datetime
 
 from .models import NewMovie
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
-import requests
+
 
 
 # Create your views here.
