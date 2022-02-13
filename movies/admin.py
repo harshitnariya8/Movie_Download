@@ -5,8 +5,8 @@ from .models import NewMovie
 # Register your models here.
 
 class MvAdmin(admin.ModelAdmin):
-    list_display = ('id', 'Movie_Name', 'Featured','genres')
-    list_editable = ('Featured',)
+    list_display = ('id', 'Movie_Name', 'Featured','webSearies','Plot_keywords')
+    list_editable = ('Featured','webSearies','Plot_keywords')
 
 
 admin.site.register(NewMovie, MvAdmin)

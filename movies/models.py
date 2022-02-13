@@ -20,6 +20,7 @@ class NewMovie(models.Model):
     Sample2 = models.ImageField(upload_to='media/sample2/%y/%m/')
     Sample3 = models.ImageField(upload_to='media/sample3/%y/%m/')
     Rating = models.FloatField(max_length=10)
+    webSearies=models.BooleanField(default=False)
     Featured = models.BooleanField(default=False)
     Coming_Soon = models.BooleanField(default=False)
     Created_date = models.DateTimeField(default=datetime.now, blank=False)

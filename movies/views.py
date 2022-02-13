@@ -10,11 +10,11 @@ from django.core.paginator import Paginator
 
 
 def home(request):
-    movies = NewMovie.objects.order_by('-Realese_Date').filter(Coming_Soon=False)[:8]
+    movies = NewMovie.objects.order_by('-Realese_Date').filter(Coming_Soon=False)
     featured_movies = NewMovie.objects.order_by('-Created_date').filter(Featured=True)[:8]
     top_rated = NewMovie.objects.order_by('Rating').reverse()[:8]
-    Bollywood_movies = NewMovie.objects.filter(Plot_keywords__icontains='Bollywood')[:8]
-    Coming_Soon_Movies = NewMovie.objects.filter(Coming_Soon=True).order_by('-Created_date').reverse()[:8]
+    Bollywood_movies = NewMovie.objects.filter(Plot_keywords__icontains='Bollywood').order_by('?')[:8]
+    Coming_Soon_Movies = NewMovie.objects.filter(webSearies=True).order_by('?').reverse()[:8]
     Movie_search = NewMovie.objects.filter(Movie_Name__contains='Movie_Name')
     if 'Movie_Name' in request.GET:
         Movie_Name = request.GET['Movie_Name']
@@ -42,7 +42,7 @@ def movie_details(request, id):
     mov = movie_single.genres.split()
 
     for m in mov:
-        related_movie = NewMovie.objects.filter(genres__icontains=m)[:12]
+        related_movie = NewMovie.objects.filter(genres__icontains=m).order_by('?')[:12]
 
     data = {
         'movie_single': movie_single,
@@ -53,7 +53,7 @@ def movie_details(request, id):
 
 
 def Search(request):
-    movies = NewMovie.objects.order_by('-Rating')
+    movies = NewMovie.objects.order_by('?')
     if request.POST:
         if 'Movie_Name' in request.POST:
             Movie_Name = request.POST['Movie_Name']
@@ -123,7 +123,7 @@ def newmovie(request):
 
 
 def upcoming(request):
-    movies = NewMovie.objects.filter(Coming_Soon=True)
+    movies = NewMovie.objects.filter(webSearies=True).order_by('Realese_Date')
     # paginator movie call
     paginator = Paginator(movies, 18)
     page = request.GET.get('page')
@@ -147,7 +147,7 @@ def upcoming(request):
 
 
 def Bollywood(request):
-    movies = NewMovie.objects.filter(Plot_keywords__icontains='Bollywood')
+    movies = NewMovie.objects.filter(Plot_keywords__icontains='Bollywood').order_by('Realese_Date')
     paginator = Paginator(movies, 18)
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)

@@ -27,7 +27,7 @@
                         {% if movie_single.Coming_Soon %}
                         {% else %}
 						<div class="btn-transform">
-							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Download</a></div>
+							<div><a href="{{movie_single.Download_link}}" class="item item-1 yellowbtn"> <i class="ion-card"></i> Download</a></div>
 
 						</div>
                         {% endif %}
@@ -83,7 +83,7 @@
 
 											</div>
                                                  <div>
-                                                    <iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/{{ movie_single.Trailer }}" style="height: 300px; width: 350px"></iframe>
+                                                    <div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i>Watch Trailer</a></div>
                                                 </div>
                                                 {% else %}
                                             <div class="title-hd-sm">
@@ -95,8 +95,8 @@
 
 						            		<div class="mvsingle-item" style="display: block;">
                                             <div><a href="{{movie_single.Download_link}}" class="item item-1 redbtn" > <i class="ion-play"></i> Download 480P</a></div>
-                                            <div  style="margin-top: 80px"><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Download 720P</a></div>
-                                            <div  style="margin-top: 80px"><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Download 10 80P</a></div>
+                                            <div  style="margin-top: 80px"><a href="{{movie_single.Download_link}}" class="item item-1 redbtn"> <i class="ion-play"></i> Download 720P</a></div>
+                                            <div  style="margin-top: 80px"><a href="{{movie_single.Download_link}}" class="item item-1 redbtn"> <i class="ion-play"></i> Download 10 80P</a></div>
 										    </div>
                                             {% endif %}
                                          <div class="title-hd-sm">
